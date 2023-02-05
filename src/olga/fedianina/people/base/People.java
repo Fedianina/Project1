@@ -1,5 +1,5 @@
 package olga.fedianina.people.base;
-
+// people - мнж число, лучше использовать person или human
 abstract public class People {
     protected String name;
     protected String surname;
