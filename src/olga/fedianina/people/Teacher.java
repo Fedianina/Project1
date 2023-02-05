@@ -10,7 +10,10 @@ import java.util.HashMap;
 public class Teacher extends People {
 
     private String subject;
+    //lessonPoints
     private int lessonPoint;
+    //очень непонятное имя переменной
+    //upd нашел ее в коде, лучше заменить со свободен на доступен - available. Также не нашел проверку на это поле. Есть ли в нем смысл?
     private boolean free = true;
 
 
@@ -30,7 +33,8 @@ public class Teacher extends People {
 
 
     }
-
+    
+    //см директора
     public Teacher() {
         super();
         age = (int) (18 + Math.random() * 64);
@@ -41,7 +45,10 @@ public class Teacher extends People {
     public void teach(ClassRoom classRoom) {
 
         for (Student student : classRoom.getStudents()) {
+            //есть !=
             if (!(student == null)) {
+                //Эта строчка пугает. Возможно стоит сделать локальную переменную выше 
+                //и заполнять (student.getSubject().get(subject) + (int) (1 + Math.random() * student.getMaxSubjectLvl()) в нее
                 student.getSubject().replace(subject, (student.getSubject().get(subject) + (int) (1 + Math.random() * student.getMaxSubjectLvl())));
                 //System.out.println("Ученик повысил свои знания");
             }
