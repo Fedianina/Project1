@@ -10,6 +10,7 @@ import java.util.Arrays;
 public class ClassRoom {
     private final int level;
 
+    //массив создается один раз и указатель на него не меняется. Возможно стоит сделать final
     private Student[] students;
 
 
@@ -34,7 +35,7 @@ public class ClassRoom {
     public Student[] getStudents() {
         return students;
     }
-
+    //нигде не используется
     public void setStudents(Student[] students) {
         this.students = students;
     }
