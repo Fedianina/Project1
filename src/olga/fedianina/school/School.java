@@ -8,7 +8,7 @@ import olga.fedianina.people.base.BaseConst;
 import java.util.HashMap;
 
 public class School {
-
+    //мне немного не нравится название, но это не критично
     private boolean openClose;
     public HashMap<Integer, ClassRoom> classRooms;
     public Teacher[] teachers;
@@ -21,7 +21,7 @@ public class School {
         this.director = director;
     }
 
-
+    //в школе плодить учеников запрещено! метод явно относится к классу Student
     public Student newStudent() {
         Student student = new Student();
         return student;
@@ -38,6 +38,7 @@ public class School {
     public void educationalProcess() {
         if (openClose) {
             for (int i = 0; i < teachers.length; ++i) {
+                //Несколько странная ситуация. Может ли учитель быть занят до образовательного процесса? Есть смысл в этой проверке и параметре в целом?
                 if (teachers[i].isFree()) {
                     teachers[i].searchClass(classRooms);
                 }
@@ -53,10 +54,11 @@ public class School {
         classRooms.put(number, new ClassRoom(number));
     }
 
-
+    //acceptForStudy
     public void newStudentInTheClass(Student student) {
         if (!classRooms.containsKey(student.getLvl())) {
             newClass(student.getLvl());
+            //две одинаковые строчки стоит вынести их за пределы if
             classRooms.get(student.getLvl()).welcomeToClass(student);
 
 
