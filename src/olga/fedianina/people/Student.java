@@ -9,6 +9,7 @@ public class Student extends People {
 
     private int age;
     private int lvl;
+    //subjects
     private HashMap<String, Integer> subject = new HashMap<>();
     private int maxSubjectLvl;
 
@@ -27,7 +28,7 @@ public class Student extends People {
         maxSubjectLvl = lvl * 10;
         this.fillingSubject(this.lvl);
     }
-
+    //см директора
     public Student() {
         super();
         age = (int) (6 + Math.random() * 11);
@@ -36,7 +37,7 @@ public class Student extends People {
         this.fillingSubject(this.lvl);
     }
 
-
+    //chooseGrade или setSubjects
     void fillingSubject(int lvl) {
 
         Subject count;
